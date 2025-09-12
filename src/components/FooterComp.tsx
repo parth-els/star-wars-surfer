@@ -1,6 +1,5 @@
 import React from 'react'
 import { Footer } from '@elsevier/graphene';
-
 export default function FooterComp() {
   return (
     <Footer
