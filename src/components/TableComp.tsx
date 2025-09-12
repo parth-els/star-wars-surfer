@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table, THeaderCell, TCell } from '@elsevier/graphene';
+// import SideSheetComp from './SideSheetComp';
 
 type Person = {
   name?: string;
@@ -13,10 +14,14 @@ type Person = {
   [key: string]: string | number | undefined; 
 };
 
-export default function TableComp({ data }: { data?: Person[] | null }) {
+export default function TableComp({ data, tableHeadersTitles, dataKeysTitles }: { data?: Person[] | null, 
+    tableHeadersTitles: string[],
+    dataKeysTitles: string[]
+  }) {
+    
   const rows = data || [];
-  const tableHeaders = ['Name', 'Birth Year', 'Gender', 'Height','Mass' ,'Hair Color', 'Eye Color', ];
-  const dataKeys = ['name', 'birth_year', 'gender', 'height', 'mass', 'hair_color', 'eye_color'];
+  const tableHeaders: string[] | undefined = tableHeadersTitles;
+  const dataKeys: string[] | undefined  = dataKeysTitles;
 
   return (
     <Table layout="spacious">
@@ -34,11 +39,15 @@ export default function TableComp({ data }: { data?: Person[] | null }) {
           </tr>
         ) : (
           rows.map((person, index) => (
-            <tr key={person.url || `${person.name || 'person'}-${index}`}>
+            <>
+             <tr key={person.url || `${person.name || 'person'}-${index}`}>
               {dataKeys.map((key) => (
                 <TCell key={key}>{person[key] || '—'}</TCell>
               ))}
             </tr>
+           
+            </>
+           
           ))
         )}
       </tbody>

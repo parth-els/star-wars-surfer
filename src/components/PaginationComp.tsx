@@ -3,9 +3,10 @@ import { useState } from 'react';
 
 interface PaginationProps {
   onPageChange: (newPage: number) => void;
+  totalNumberOfItemsInTheData: number;
 }
  
-export function PaginationComp({ onPageChange }: PaginationProps) {
+export function PaginationComp({ onPageChange, totalNumberOfItemsInTheData }: PaginationProps) {
   const [page, setPage] = useState<number>(1);
 
   const handlePageChange = (newPage: number) => {
@@ -20,7 +21,7 @@ export function PaginationComp({ onPageChange }: PaginationProps) {
         variant="Numbers"
         pageSize={10}
         currentPage={page}
-        totalNumberOfItems={90}
+        totalNumberOfItems={totalNumberOfItemsInTheData}
         onCurrentPageChange={handlePageChange}
         showNextAndPreviousButtons
         showToStartAndToEndButtons

@@ -1,28 +1,41 @@
-import React from 'react'
-// import StarWarsLogo from '../assets/starwarslogo.png'
-
+import React, { useState } from 'react'
 import { Header } from "@elsevier/graphene";
-import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function HeaderComp() {
-  const [activeLink, setActiveLink] = useState('#item1');
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const onLinkClick = (href: string) => {
-    setActiveLink(href);
+  // sync active link with current URL
+  const [activeLink, setActiveLink] = useState(location.pathname);
+
+  const onLinkClick = (path: string) => {
+    setActiveLink(path);
+    navigate(path);
   };
 
   return (
-    <>
- <Header
-    logoVariant={'Product'}
-    productName={'Star Wars Data Explorer'}
-    navigationPosition={'top'}
-    navigationLinks={[
-      { linkType: 'link', label: 'Item 1', variant: 'list', onClick: () => onLinkClick('#item1'), active: activeLink === '#item1' },
-      { linkType: 'link', label: 'Item 2', variant: 'list', onClick: () => onLinkClick('#item2'), active: activeLink === '#item2' },
-    ]}
-    showBorderBottom={true}
-  />
-    </>
+    <Header
+      logoVariant={'Product'}
+      productName={'Star Wars Data Explorer'}
+      navigationPosition={'top'}
+      navigationLinks={[
+        {
+          linkType: 'link',
+          label: 'People',
+          variant: 'list',
+          onClick: () => onLinkClick('/people'),
+          active: activeLink === '/people',
+        },
+        {
+          linkType: 'link',
+          label: 'Films',
+          variant: 'list',
+          onClick: () => onLinkClick('/films'),
+          active: activeLink === '/films',
+        },
+      ]}
+      showBorderBottom={true}
+    />
   );
 }

@@ -4,39 +4,48 @@ export default function FooterComp() {
   return (
     <Footer
       socialItems={[
-        {
-          id: 'facebook',
-          href: 'https://www.facebook.com/',
-          target: '_blank',
-          iconRight: 'facebook-logo',
-          'aria-label': 'facebook'
-        },
-        {
-          id: 'messenger',
-          href: 'https://www.facebook.com/',
-          target: '_blank',
-          iconRight: 'facebook-messenger',
-          'aria-label': 'messenger'
-        }
+        // {
+        //   id: 'facebook',
+        //   href: 'https://www.facebook.com/',
+        //   target: '_blank',
+        //   iconRight: 'facebook-logo',
+        //   'aria-label': 'facebook'
+        // },
+        // {
+        //   id: 'messenger',
+        //   href: 'https://www.facebook.com/',
+        //   target: '_blank',
+        //   iconRight: 'facebook-messenger',
+        //   'aria-label': 'messenger'
+        // }
       ]}
       productMenuItems={[
         {
-          id: 'about',
-          href: '',
+          id: 'Jira Ticket',
+          href: 'https://elsevier.atlassian.net/jira/software/c/projects/GPHN/boards/8948?quickFilter=60217&selectedIssue=GPHN-2377',
           label: 'About',
           target: '_blank'
         },
         {
-          id: 'content_coverage',
-          href: '',
-          label: 'Content Coverage',
+          id: 'Graphene Docs',
+          href: 'https://graphene.elsevier.com/',
+          label: 'Graphene Docs',
           target: '_blank'
-        }
+        },
+        {
+          id: 'SWAPI Docs',
+          href: 'https://swapi.py4e.com/documentation#base',
+          label: 'SWAPI Docs',
+          target: '_blank'
+        },
+        // https://swapi.py4e.com/documentation#base
+       
       ]}
       utilityMenuItems={[
         {
-          id: 'custom menu link',
-          label: 'Custom menu link'
+          id: 'Home Page',
+          href: '/',
+          label: 'Home Page'
         }
       ]}
     />

@@ -5,10 +5,11 @@ import SkeletonComp from '../components/SkeletonComp';
 import { Search } from "@elsevier/graphene";
 // import LoadingComp from '../components/LoadingComp';
 // import SideSheetComp from '../components/SideSheetComp';
+// import TableFilmsComp from '../components/TableFilmsComp';
 
-export default function Hero() {
+export default function Films() {
 
-    const URL = "https://swapi.py4e.com/api/people/?page=";
+    const URL = "https://swapi.py4e.com/api/films/?page=";
     const [pageNumber, setpageNumber] = useState<number>(1)
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [data, setData] = useState<any[] | null>(null)
@@ -76,14 +77,14 @@ export default function Hero() {
         setLoading(true);
         setError(null);
         try {
-            const res = await fetch(`https://swapi.py4e.com/api/people/?search=${value}`);
+            const res = await fetch(`https://swapi.py4e.com/api/films/?search=${value}`);
             if (!res.ok) {
                 throw new Error(`Network response was not ok: ${res.status} ${res.statusText}`);
             }
             const jsonData = await res.json();
             setData(jsonData?.results ?? []);
-        } catch (err: any) {
-            setError(err.message ?? String(err));
+        } catch (err) {
+            setError(err ?? String(err));
         } finally {
             setLoading(false);
         }
@@ -105,7 +106,7 @@ export default function Hero() {
                     variant={'hero'}
                     label="Search"
                     value={searchTerm}
-                    placeholder="Search people"
+                    placeholder="Search films"
                     onSearchChange={(value: string) => {
                         setSearchTerm(value);
                     }}
@@ -122,9 +123,8 @@ export default function Hero() {
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <TableComp 
                     data={data} 
-                    tableHeadersTitles = {['Name', 'Birth Year', 'Gender', 'Height','Mass' ,'Hair Color', 'Eye Color' ]}
-                    dataKeysTitles = {['name', 'birth_year', 'gender', 'height', 'mass', 'hair_color', 'eye_color']}
-                    />
+                    tableHeadersTitles={['Ep. Id','Title', 'Opening Crawl Year', 'Director', 'Producer','Release Date' ]} 
+                    dataKeysTitles={['episode_id','title', 'opening_crawl', 'director', 'producer', 'release_date']} />
                 </div>
             )}
 
@@ -133,7 +133,7 @@ export default function Hero() {
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '4rem' }}>
                 <PaginationComp
                     onPageChange={(newPage) => setpageNumber(newPage)}
-                    totalNumberOfItemsInTheData={90}
+                     totalNumberOfItemsInTheData={10}
                 />
             </div>
 
