@@ -3,7 +3,7 @@ import { Footer } from '@elsevier/graphene';
 export default function FooterComp() {
   return (
     <Footer
-      socialItems={[
+      // socialItems={[
         // {
         //   id: 'facebook',
         //   href: 'https://www.facebook.com/',
@@ -18,7 +18,7 @@ export default function FooterComp() {
         //   iconRight: 'facebook-messenger',
         //   'aria-label': 'messenger'
         // }
-      ]}
+      // ]}
       productMenuItems={[
         {
           id: 'Jira Ticket',
@@ -41,13 +41,21 @@ export default function FooterComp() {
         // https://swapi.py4e.com/documentation#base
        
       ]}
-      utilityMenuItems={[
-        {
-          id: 'Home Page',
-          href: '/',
-          label: 'Home Page'
-        }
-      ]}
+      cookieText={""}
+
+      utilityMenuItems={[]}
+      cookieLink={{
+    href: '',
+    label: ''
+  }}
+      // cookieLink={""}
+      // utilityMenuItems={[
+      //   {
+      //     id: 'Home Page',
+      //     href: '/',
+      //     label: 'Home Page'
+      //   }
+      // ]}
     />
   )
 }

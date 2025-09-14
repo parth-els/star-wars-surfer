@@ -128,7 +128,7 @@ export default function Films() {
                 </div>
             )}
 
-            {!loading && !error && !data && <div>No data available.</div>}
+            {!loading && !error && !data && <div>No data available from SWAPI.</div>}
 
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '4rem' }}>
                 <PaginationComp

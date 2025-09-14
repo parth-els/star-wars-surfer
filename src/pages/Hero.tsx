@@ -111,6 +111,10 @@ export default function Hero() {
                     }}
                     onSearch={(value: string) => fetchSearchTermData(value)}
                     onOptionSelected={() => { }}
+                    onClearSearch={() => {
+                        setSearchTerm('');
+                        fetchTableData();
+                    }}
                 />
             </div>
 
@@ -128,7 +132,7 @@ export default function Hero() {
                 </div>
             )}
 
-            {!loading && !error && !data && <div>No data available.</div>}
+            {!loading && !error && !data && <div>No data available from SWAPI.</div>}
 
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '4rem' }}>
                 <PaginationComp
