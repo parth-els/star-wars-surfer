@@ -93,7 +93,7 @@ export default function Films() {
     return (
         <>
             <h1 style={{ color: 'black', marginBottom: '4rem' }}>
-                Star Wars people
+                Star Wars Films
             </h1>
 
             
@@ -101,7 +101,7 @@ export default function Films() {
 
                 </SideSheetContainer> */}
 
-            <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '4rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '4rem',  marginRight: '4rem' }}>
                 <Search
                     variant={'hero'}
                     label="Search"

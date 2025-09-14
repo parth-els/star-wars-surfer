@@ -3,6 +3,9 @@ import TableComp from '../components/TableComp'
 import { PaginationComp } from '../components/PaginationComp'
 import SkeletonComp from '../components/SkeletonComp';
 import { Search } from "@elsevier/graphene";
+
+import { PopoverComp } from '../components/PopoverComp';
+import SideSheetComp from '../components/SideSheetComp';
 // import LoadingComp from '../components/LoadingComp';
 // import SideSheetComp from '../components/SideSheetComp';
 
@@ -36,7 +39,6 @@ export default function Hero() {
         return () => {
             mountedRef.current = false
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [pageNumber])
 
     async function fetchTableData() {
@@ -100,7 +102,7 @@ export default function Hero() {
 
                 </SideSheetContainer> */}
 
-            <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '4rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '4rem', marginRight: '4rem' }}>
                 <Search
                     variant={'hero'}
                     label="Search"
@@ -141,11 +143,12 @@ export default function Hero() {
                 />
             </div>
 
-           
+            {/* <PopoverComp />
+            <SideSheetComp
+                isOpen={false}
+                onOpenChange={() => {}}
+            /> */}
 
-            
-
-        
         </>
     )
 }

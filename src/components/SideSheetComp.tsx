@@ -13,7 +13,7 @@ const ExampleContent = () => {
     const context = useContext(SideSheetContext);
     React.useEffect(() => context.setSideSheet(hobbitItems), []);
     return (
-      <Inline horizontalAlignment="stretch" width="60%">
+      <Inline horizontalAlignment="stretch" width="100%">
         <Button
           label={context.isOpen ? 'Close side sheet' : 'Open side sheet'}
           variant="primary"
@@ -21,7 +21,7 @@ const ExampleContent = () => {
         />
         <Inline spacing="8dp">
           <Button label="Hobbit items" variant="secondary" onClick={() => context.setSideSheet(hobbitItems)} />
-          {/* <Button label="Silmarillion items" variant="secondary" onClick={() => context.setSideSheet(silmarillionItems)} /> */}
+          <Button label="Silmarillion items" variant="secondary" onClick={() => context.setSideSheet(silmarillionItems)} />
         </Inline>
       </Inline>
     );
@@ -43,15 +43,15 @@ const hobbitItems: SideSheetContentProps = {
       </Typography>
     </div>
   ),
-//   actions: [
-//     {
-//       ariaLabel: 'Favorite this item',
-//       iconName: 'favourite',
-//       onClick: () => {
-//         alert('Item favorited!');
-//       },
-//     },
-//   ],
+  actions: [
+    {
+      ariaLabel: 'Favorite this item',
+      iconName: 'favourite',
+      onClick: () => {
+        alert('Item favorited!');
+      },
+    },
+  ],
 };
 
 

@@ -25,7 +25,7 @@ export default function App() {
                 <Route path="*" element={<h2>404 - Page Not Found</h2>} />
               </Routes>
             ),
-            layout: 'narrow',
+            layout: 'fluid',
           },
         ]}
       />
