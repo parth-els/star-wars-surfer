@@ -1,4 +1,6 @@
 /* Global reset */
+
+
 * {
   margin: 0;
   padding: 0;
@@ -16,9 +18,9 @@ body {
 /* Root container */
 #root {
   width: 100%;
-  max-width: 1200px;
+  /* max-width: 1400px; */
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -34,29 +36,6 @@ body {
 .logo:hover {
   filter: drop-shadow(0 0 1rem #646cffaa);
 }
-
-/* Header Layout */
-/* header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-} */
-/* 
-nav {
-  display: flex;
-  gap: 2rem;
-}
-
-nav a {
-  text-decoration: none;
-  font-weight: 500;
-  color: #111;
-  transition: color 0.2s ease;
-}
-nav a:hover {
-  color: #0070f3;
-} */
 
 /* Page Title */
 h1 {
@@ -124,11 +103,9 @@ tbody tr:hover {
   background: #f9f9f9;
 }
 
-/* Card wrapper if needed
-.card {
-  padding: 1.5rem;
-  background: transparent;
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-} */
+/* Debug skeleton visibility */
+.skeleton-debug {
+  border: 2px solid #e3e8f0;
+  background: #e3e8f0;
+  border-radius: 4px;
+}

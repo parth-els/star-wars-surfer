@@ -25,16 +25,16 @@ export function CardComp({
     <Card
       expanded
       heading={heading}
-      headingAs={inline ? 'h2' : 'h1'}
+      headingAs={'h1'}
       subheading={subheading || undefined}
-      subheadingAs={inline ? 'h4' : 'h2'}
+      subheadingAs={'h2'}
       size="medium"
-      style={{
-        background: 'transparent',
-        boxShadow: 'none',
-        borderRadius: 0,
-        padding: 0,
-      }}
+      // style={{
+      //   background: 'transparent',
+      //   boxShadow: 'none',
+      //   borderRadius: 0,
+      //   padding: 0,
+      // }}
     >
       <div
         style={{
@@ -91,16 +91,16 @@ export function CardComp({
           </>
         )}
 
-        {data.url && (
+        {/* {data.url && (
           <div>
             <a href={String(data.url)} target="_blank" rel="noreferrer" style={{ color: '#0b69ff' }}>
               Open reference
             </a>
           </div>
-        )}
+        )} */}
 
         {onClose && (
-          <Inline spacing="8dp" style={{ justifyContent: 'flex-end', marginTop: 8 }}>
+          <Inline spacing="8dp" >
             <Button onClick={onClose} variant="secondary" label="Close" />
           </Inline>
         )}
@@ -108,11 +108,7 @@ export function CardComp({
     </Card>
   );
 
-  // Render inline content (for SideSheet) or modal overlay (fallback for standalone)
-  if (inline) {
-    return <div style={{ width: '100%' }}>{cardInner}</div>;
-  }
-
+  
   return (
     <div
       role="dialog"

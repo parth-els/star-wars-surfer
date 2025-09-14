@@ -25,7 +25,7 @@ export default function HeaderComp() {
     <Header
       logoVariant={'Custom'}
       logoCustomSVGsrc={StarWarsLogo}
-      // productName={'Star Wars Data Explorer'}
+      //productName={'Star Wars Data Explorer'}
       navigationPosition={'top'}
       navigationLinks={[
         {

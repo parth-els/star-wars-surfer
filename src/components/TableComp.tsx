@@ -91,7 +91,7 @@ export default function TableComp({
         </tbody>
       </Table>
 
-      {/* modal card for selected item (person or film) */}
+      {/* modal card for selected item*/}
       <CardComp data={selected} onClose={() => setSelected(null)} />
     </>
   );
