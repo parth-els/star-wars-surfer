@@ -77,7 +77,7 @@ Welcome to the Star Wars Data Explorer! This React app demonstrates key frontend
 - [CSS Modules Docs](https://github.com/css-modules/css-modules)
 
 ## Author
-- Your Name (add your name here)
+- [PARTH BIDARI](https://github.com/parth-els)
 
 ## License
 This project is for onboarding and educational purposes.
